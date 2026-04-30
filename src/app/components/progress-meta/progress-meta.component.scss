@@ -1,0 +1,25 @@
+.mc-progress__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mc-progress__bar {
+  margin-top: 14px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--mc-surface-2);
+  border: 1px solid var(--mc-border-2);
+  overflow: hidden;
+}
+
+.mc-progress__barFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--mc-green-light), var(--mc-green));
+  box-shadow: 0 0 8px rgba(40, 102, 118, 0.35);
+  transition: width 680ms cubic-bezier(.4,0,.2,1);
+  min-width: 6px;
+}

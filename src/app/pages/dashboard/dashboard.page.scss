@@ -1,0 +1,212 @@
+/* ── Greeting ─────────────────────────────────── */
+
+.mc-dash__hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mc-dash__greet {
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  font-size: 22px;
+  color: var(--mc-text);
+}
+
+.mc-dash__mot {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--mc-text-2);
+}
+
+/* ── Calorie ring ─────────────────────────────── */
+
+.mc-dash__kcalInner { display: grid; gap: 20px; }
+
+.mc-dash__kcalTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mc-dash__kcalMeta {
+  font-size: 13px;
+  color: var(--mc-text-2);
+  font-weight: 700;
+}
+
+.mc-ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.mc-ring__svg { width: 200px; height: 200px; }
+
+.mc-ring__bg {
+  fill: none;
+  stroke: var(--mc-surface-2);
+  stroke-width: 12;
+}
+
+.mc-ring__fg {
+  fill: none;
+  stroke: var(--mc-green);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 289.02652413026095;
+  transform: rotate(-90deg);
+  transform-origin: 60px 60px;
+  transition: stroke-dashoffset 560ms cubic-bezier(.4,0,.2,1), stroke 200ms ease;
+  filter: drop-shadow(0 0 5px rgba(40, 102, 118, 0.45));
+}
+
+.mc-ring__fg.is-warn {
+  stroke: var(--mc-warning);
+  filter: drop-shadow(0 0 5px rgba(243, 156, 18, 0.45));
+}
+
+.mc-ring__fg.is-over {
+  stroke: var(--mc-danger);
+  filter: drop-shadow(0 0 5px rgba(231, 76, 60, 0.45));
+}
+
+.mc-ring__center {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.mc-ring__value {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--mc-text);
+}
+
+.mc-ring__label {
+  font-size: 11px;
+  color: var(--mc-muted);
+  font-weight: 600;
+}
+
+.mc-ring__rest {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--mc-green);
+  font-weight: 800;
+}
+
+/* ── Meal cards ──────────────────────────────── */
+
+.mc-dash__meals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .mc-dash__meals { grid-template-columns: repeat(4, 1fr); }
+}
+
+.mc-dash__meal {
+  border-radius: var(--mc-radius-sm);
+  border: 1px solid var(--mc-border-2);
+  background: var(--mc-surface-2);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  transition: box-shadow 160ms ease;
+}
+
+.mc-dash__mealEmoji { font-size: 22px; line-height: 1; }
+
+.mc-dash__mealName {
+  font-size: 11px;
+  color: var(--mc-muted);
+  font-weight: 700;
+}
+
+.mc-dash__mealKcal {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: var(--mc-text);
+}
+
+/* ── Sub-sections ────────────────────────────── */
+
+.mc-dash__weightTop,
+.mc-dash__weekTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+/* ── Metas chips ─────────────────────────────── */
+
+.mc-meta__list { display: grid; gap: 8px; }
+
+.mc-meta__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--mc-radius-sm);
+  border: 1px solid var(--mc-border-2);
+  background: var(--mc-surface-2);
+}
+
+.mc-meta__range { font-size: 12px; color: var(--mc-muted); }
+.mc-meta__target { font-size: 13px; font-weight: 700; color: var(--mc-text); }
+
+.mc-chip--batida {
+  border-color: rgba(40, 102, 118, 0.30);
+  background: var(--mc-green-bg);
+  color: var(--mc-green);
+}
+
+.mc-chip--pendente {
+  border-color: rgba(243, 156, 18, 0.28);
+  background: #fffbf0;
+  color: var(--mc-warning);
+}
+
+.mc-chip--atrasada {
+  border-color: rgba(231, 76, 60, 0.28);
+  background: #fff5f5;
+  color: var(--mc-danger);
+}
+
+.mc-chip--ok {
+  border-color: rgba(40, 102, 118, 0.30);
+  background: var(--mc-green-bg);
+  color: var(--mc-green);
+}
+
+.mc-chip--warn {
+  border-color: rgba(243, 156, 18, 0.28);
+  background: #fffbf0;
+  color: var(--mc-warning);
+}
+
+.mc-chip--danger {
+  border-color: rgba(231, 76, 60, 0.28);
+  background: #fff5f5;
+  color: var(--mc-danger);
+}

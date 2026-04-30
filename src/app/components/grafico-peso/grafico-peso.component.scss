@@ -1,0 +1,16 @@
+.mc-chart__top {
+  margin-bottom: 10px;
+}
+
+.mc-chart__canvas {
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+
+@media (min-width: 720px) {
+  .mc-chart__canvas {
+    height: 260px;
+  }
+}
+

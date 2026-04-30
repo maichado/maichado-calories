@@ -1,1 +1,200 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/tokens.scss';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--mc-font);
+  background: var(--mc-bg);
+  color: var(--mc-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── Layout ──────────────────────────────────── */
+
+.mc-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--mc-space-4) var(--mc-space-4) calc(var(--mc-space-6) + 80px);
+}
+
+@media (min-width: 720px) {
+  .mc-container {
+    padding: var(--mc-space-5) var(--mc-space-6) calc(var(--mc-space-6) + 80px);
+  }
+}
+
+/* ── Card ────────────────────────────────────── */
+
+.mc-card {
+  background: var(--mc-surface);
+  border: 1px solid var(--mc-border-2);
+  border-radius: var(--mc-radius);
+  box-shadow: var(--mc-shadow);
+  overflow: hidden;
+}
+
+.mc-card__inner { padding: var(--mc-space-5); }
+
+/* ── Grid ────────────────────────────────────── */
+
+.mc-grid { display: grid; gap: var(--mc-space-4); }
+
+@media (min-width: 720px) {
+  .mc-grid--2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Typography ──────────────────────────────── */
+
+.mc-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: var(--mc-title-w);
+  letter-spacing: -0.2px;
+  color: var(--mc-text);
+}
+
+.mc-subtitle {
+  margin: 0;
+  color: var(--mc-text-2);
+  font-size: 13px;
+  font-weight: var(--mc-body-w);
+  line-height: 1.45;
+}
+
+/* ── Chip ────────────────────────────────────── */
+
+.mc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--mc-border-2);
+  background: var(--mc-surface-2);
+  color: var(--mc-text-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+/* ── Form ────────────────────────────────────── */
+
+.mc-form    { display: grid; gap: 14px; }
+.mc-row     { display: grid; gap: 12px; }
+
+@media (min-width: 540px) {
+  .mc-row { grid-template-columns: 1fr 1fr; }
+}
+
+.mc-field {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mc-text);
+}
+
+.mc-input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: var(--mc-radius-sm);
+  border: 1.5px solid var(--mc-border-2);
+  background: var(--mc-surface);
+  color: var(--mc-text);
+  font-family: var(--mc-font);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.mc-input:focus {
+  border-color: var(--mc-green);
+  box-shadow: 0 0 0 3px rgba(40, 102, 118, 0.18);
+}
+
+.mc-input::placeholder { color: var(--mc-muted); }
+
+/* ── Buttons ─────────────────────────────────── */
+
+.mc-btn {
+  padding: 13px 18px;
+  border-radius: var(--mc-radius-sm);
+  border: 1.5px solid var(--mc-border-2);
+  background: var(--mc-surface-2);
+  color: var(--mc-text);
+  font-family: var(--mc-font);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 110ms ease, filter 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: -0.1px;
+}
+
+.mc-btn:active { transform: scale(0.97); }
+
+.mc-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+.mc-btn--primary {
+  border-color: var(--mc-green);
+  background: var(--mc-green);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(40, 102, 118, 0.30);
+}
+
+.mc-btn--primary:hover { filter: brightness(1.06); }
+.mc-btn--primary:active { filter: brightness(0.94); }
+
+.mc-btn--outline {
+  border-color: var(--mc-green);
+  background: transparent;
+  color: var(--mc-green);
+}
+
+.mc-btn--ghost {
+  border-color: var(--mc-border-2);
+  background: transparent;
+  color: var(--mc-text-2);
+}
+
+/* ── Skeleton ────────────────────────────────── */
+
+.mc-skeleton {
+  border-radius: var(--mc-radius-xs);
+  background: linear-gradient(
+    90deg,
+    var(--mc-surface-2) 0%,
+    #e7edf1 50%,
+    var(--mc-surface-2) 100%
+  );
+  background-size: 220% 100%;
+  animation: mc-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes mc-shimmer {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* ── In-view animation utility ──────────────── */
+.in-view-init {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 360ms ease, transform 360ms ease;
+}
+
+.in-view-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

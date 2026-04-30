@@ -1,0 +1,27 @@
+.mc-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mc-status {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mc-green);
+}
+
+/* Yazio-style section headers */
+
+:host .mc-card {
+  & + .mc-card { margin-top: 0; }
+}
+
+:host .mc-card__inner h2.mc-title,
+:host .mc-card__inner h3.mc-title {
+  font-size: 16px;
+  border-bottom: 1px solid var(--mc-border-2);
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}

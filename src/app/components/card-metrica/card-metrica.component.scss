@@ -1,0 +1,29 @@
+.mc-metric__inner {
+  display: grid;
+  gap: 10px;
+}
+
+.mc-metric__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mc-metric__label {
+  font-size: 13px;
+  color: var(--mc-text-2);
+  letter-spacing: 0.2px;
+}
+
+.mc-metric__value {
+  font-size: 28px;
+  font-weight: 720;
+  letter-spacing: -0.6px;
+}
+
+.mc-metric__hint {
+  font-size: 12px;
+  color: var(--mc-muted);
+}
+

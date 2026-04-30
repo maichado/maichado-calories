@@ -1,0 +1,52 @@
+:root {
+  /* ── Brand */
+  --mc-green:      #286676;
+  --mc-green-light:#3b8092;
+  --mc-green-bg:   #edf5f7;
+  --mc-green-mid:  #c4dce3;
+  --mc-teal:       #2f8ea4;
+  --mc-orange:     #e67e22;
+  --mc-danger:     #e74c3c;
+  --mc-warning:    #f39c12;
+
+  /* ── Backgrounds */
+  --mc-bg:        #f2f7f8;
+  --mc-surface:   #ffffff;
+  --mc-surface-2: #f2f6f9;
+  --mc-surface-3: #e7eff2;
+
+  /* ── Borders */
+  --mc-border:    rgba(40, 102, 118, 0.16);
+  --mc-border-2:  #e2e8ed;
+  --mc-border-3:  #cdd6dc;
+
+  /* ── Text */
+  --mc-text:      #1d2a30;
+  --mc-text-2:    #445f67;
+  --mc-muted:     #859ba3;
+
+  /* ── Elevation */
+  --mc-radius:    20px;
+  --mc-radius-sm: 14px;
+  --mc-radius-xs: 10px;
+  --mc-shadow:    0 4px 20px rgba(24, 66, 78, 0.10);
+  --mc-shadow-md: 0 8px 32px rgba(24, 66, 78, 0.14);
+  --mc-shadow-sm: 0 2px 8px rgba(24, 66, 78, 0.08);
+
+  /* ── Spacing */
+  --mc-space-1: 6px;
+  --mc-space-2: 10px;
+  --mc-space-3: 14px;
+  --mc-space-4: 18px;
+  --mc-space-5: 24px;
+  --mc-space-6: 32px;
+  --mc-space-7: 48px;
+
+  /* ── Typography */
+  --mc-font:       Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  --mc-title-w:    800;
+  --mc-subtitle-w: 600;
+  --mc-body-w:     400;
+
+  color-scheme: light;
+}
